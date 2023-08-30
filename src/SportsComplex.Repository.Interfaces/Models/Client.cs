@@ -8,6 +8,7 @@
         public DateTime DateOfBirth { get; set; }
         public string Phone { get; set; }
         public string IdentityNumber { get; set; }
-        public int CoachId { get; set; }
+        public int? CoachId { get; set; }
+        public Coach Coach { get; set; }
     }
 }

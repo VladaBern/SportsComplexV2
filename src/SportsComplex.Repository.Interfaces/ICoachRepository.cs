@@ -7,7 +7,7 @@ namespace SportsComplex.Repository.Interfaces
         IEnumerable<Coach> GetCoaches();
         Coach GetCoach(int id);
         int CreateCoach(Coach coach);
-        bool UpdateCoach(int id, Coach coach);
+        bool UpdateCoach(Coach coach);
         bool DeleteCoach(int id);
     }
 }

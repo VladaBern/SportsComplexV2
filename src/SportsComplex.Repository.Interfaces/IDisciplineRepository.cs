@@ -7,7 +7,7 @@ namespace SportsComplex.Repository.Interfaces
         IEnumerable<Discipline> GetDisciplines();
         Discipline GetDiscipline(int id);
         int CreateDiscipline(Discipline discipline);
-        bool UpdateDiscipline(int id, Discipline discipline);
+        bool UpdateDiscipline(Discipline discipline);
         bool DeleteDiscipline(int id);
     }
 }

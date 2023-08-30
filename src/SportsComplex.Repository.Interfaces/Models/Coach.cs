@@ -9,5 +9,7 @@
         public string Phone { get; set; }
         public string IdentityNumber { get; set; }
         public int DisciplineId { get; set; }
+        public Discipline Discipline { get; set; }
+        public IEnumerable<Client> Clients { get; set; }
     }
 }

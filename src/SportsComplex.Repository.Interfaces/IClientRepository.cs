@@ -7,7 +7,7 @@ namespace SportsComplex.Repository.Interfaces
         IEnumerable<Client> GetClients();
         Client GetClient(int id);
         int CreateClient(Client client);
-        bool UpdateClient(int id, Client client);
+        bool UpdateClient(Client client);
         bool DeleteClient(int id);
     }
 }
