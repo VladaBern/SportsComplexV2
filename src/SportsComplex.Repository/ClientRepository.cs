@@ -5,7 +5,7 @@ namespace SportsComplex.Repository
 {
     internal class ClientRepository : IClientRepository
     {
-        private SportsComplexDbContext dbContext;
+        private readonly SportsComplexDbContext dbContext;
 
         public ClientRepository(SportsComplexDbContext context)
         {

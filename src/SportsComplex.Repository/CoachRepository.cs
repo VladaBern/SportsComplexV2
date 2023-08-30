@@ -5,7 +5,7 @@ namespace SportsComplex.Repository
 {
     public class CoachRepository : ICoachRepository
     {
-        private SportsComplexDbContext dbContext;
+        private readonly SportsComplexDbContext dbContext;
 
         public CoachRepository(SportsComplexDbContext context)
         {
