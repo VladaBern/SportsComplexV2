@@ -1,13 +1,13 @@
-﻿using SportsComplex.Services.Interfaces.Models;
+﻿using SportsComplex.Services.Interfaces.DTO;
 
 namespace SportsComplex.Services.Interfaces
 {
     public interface ICoachService
     {
-        IEnumerable<Coach> GetCoaches();
-        Coach GetCoach(int id);
-        Coach CreateCoach(Coach coach);
-        Coach UpdateCoach(int id, Coach coach);
+        IEnumerable<CoachDto> GetCoaches();
+        CoachDto GetCoach(int id);
+        CoachDto CreateCoach(CoachDto coach);
+        CoachDto UpdateCoach(int id, CoachDto coach);
         void DeleteCoach(int id);
     }
 }

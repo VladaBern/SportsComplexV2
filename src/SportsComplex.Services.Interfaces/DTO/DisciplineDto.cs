@@ -1,6 +1,6 @@
-﻿namespace SportsComplex.Services.Interfaces.Models
+﻿namespace SportsComplex.Services.Interfaces.DTO
 {
-    public class Discipline
+    public class DisciplineDto
     {
         public int Id { get; set; }
         public string Name { get; set; }

@@ -1,13 +1,13 @@
-﻿using SportsComplex.Services.Interfaces.Models;
+﻿using SportsComplex.Services.Interfaces.DTO;
 
 namespace SportsComplex.Services.Interfaces
 {
-    internal interface IClientService
+    public interface IClientService
     {
-        IEnumerable<Client> GetClients();
-        Client GetClient(int id);
-        Client CreateClient(Client client);
-        Client UpdateClient(int id, Client client);
+        IEnumerable<ClientDto> GetClients();
+        ClientDto GetClient(int id);
+        ClientDto CreateClient(ClientDto client);
+        ClientDto UpdateClient(int id, ClientDto client);
         void DeleteClient(int id);
     }
 }
