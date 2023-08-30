@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsComplex", "src\Sports
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsComplex.Repository.Interfaces", "src\SportsComplex.Repository.Interfaces\SportsComplex.Repository.Interfaces.csproj", "{9F782DB4-EF64-4C45-831F-441A5B435D10}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsComplex.Repository", "src\SportsComplex.Repository\SportsComplex.Repository.csproj", "{CCC8ACE4-E7B9-42F3-8E4B-B72C850A2878}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9F782DB4-EF64-4C45-831F-441A5B435D10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F782DB4-EF64-4C45-831F-441A5B435D10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F782DB4-EF64-4C45-831F-441A5B435D10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCC8ACE4-E7B9-42F3-8E4B-B72C850A2878}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCC8ACE4-E7B9-42F3-8E4B-B72C850A2878}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCC8ACE4-E7B9-42F3-8E4B-B72C850A2878}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCC8ACE4-E7B9-42F3-8E4B-B72C850A2878}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
