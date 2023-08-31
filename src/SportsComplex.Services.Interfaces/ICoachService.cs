@@ -4,10 +4,10 @@ namespace SportsComplex.Services.Interfaces
 {
     public interface ICoachService
     {
-        IEnumerable<CoachDto> GetCoaches();
-        CoachDto GetCoach(int id);
-        CoachDto CreateCoach(CoachDto coach);
-        CoachDto UpdateCoach(int id, CoachDto coach);
-        void DeleteCoach(int id);
+        Task<IEnumerable<CoachDto>> GetCoachesAsync();
+        Task<CoachDto> GetCoachAsync(int id);
+        Task<CoachDto> CreateCoachAsync(CoachDto coach);
+        Task<CoachDto> UpdateCoachAsync(int id, CoachDto coach);
+        Task DeleteCoachAsync(int id);
     }
 }

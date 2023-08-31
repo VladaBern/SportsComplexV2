@@ -4,10 +4,10 @@ namespace SportsComplex.Services.Interfaces
 {
     public interface IDisciplineService
     {
-        IEnumerable<DisciplineDto> GetDisciplines();
-        DisciplineDto GetDiscipline(int id);
-        DisciplineDto CreateDiscipline(DisciplineDto discipline);
-        DisciplineDto UpdateDiscipline(int id, DisciplineDto discipline);
-        void DeleteDiscipline(int id);
+        Task<IEnumerable<DisciplineDto>> GetDisciplinesAsync();
+        Task<DisciplineDto> GetDisciplineAsync(int id);
+        Task<DisciplineDto> CreateDisciplineAsync(DisciplineDto discipline);
+        Task<DisciplineDto> UpdateDisciplineAsync(int id, DisciplineDto discipline);
+        Task DeleteDisciplineAsync(int id);
     }
 }
