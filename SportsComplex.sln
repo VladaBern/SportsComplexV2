@@ -5,11 +5,13 @@ VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsComplex", "src\SportsComplex\SportsComplex.csproj", "{4C94D0F3-CA8E-4888-B733-6F1E9D36E099}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsComplex.Repository.Interfaces", "src\SportsComplex.Repository.Interfaces\SportsComplex.Repository.Interfaces.csproj", "{9F782DB4-EF64-4C45-831F-441A5B435D10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsComplex.Repository.Interfaces", "src\SportsComplex.Repository.Interfaces\SportsComplex.Repository.Interfaces.csproj", "{9F782DB4-EF64-4C45-831F-441A5B435D10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsComplex.Repository", "src\SportsComplex.Repository\SportsComplex.Repository.csproj", "{CCC8ACE4-E7B9-42F3-8E4B-B72C850A2878}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsComplex.Repository", "src\SportsComplex.Repository\SportsComplex.Repository.csproj", "{CCC8ACE4-E7B9-42F3-8E4B-B72C850A2878}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsComplex.Services.Interfaces", "src\SportsComplex.Services.Interfaces\SportsComplex.Services.Interfaces.csproj", "{88AAD10A-E382-4A28-A1C4-90BCD33F15D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsComplex.Services.Interfaces", "src\SportsComplex.Services.Interfaces\SportsComplex.Services.Interfaces.csproj", "{88AAD10A-E382-4A28-A1C4-90BCD33F15D9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsComplex.Services", "src\SportsComplexServices\SportsComplex.Services.csproj", "{ACADB912-5A84-4432-A7D8-254DA7CFD029}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{88AAD10A-E382-4A28-A1C4-90BCD33F15D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88AAD10A-E382-4A28-A1C4-90BCD33F15D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88AAD10A-E382-4A28-A1C4-90BCD33F15D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACADB912-5A84-4432-A7D8-254DA7CFD029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACADB912-5A84-4432-A7D8-254DA7CFD029}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACADB912-5A84-4432-A7D8-254DA7CFD029}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACADB912-5A84-4432-A7D8-254DA7CFD029}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
