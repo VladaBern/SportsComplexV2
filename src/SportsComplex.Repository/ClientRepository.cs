@@ -4,7 +4,7 @@ using SportsComplex.Repository.Interfaces.Models;
 
 namespace SportsComplex.Repository
 {
-    internal class ClientRepository : IClientRepository
+    public class ClientRepository : IClientRepository
     {
         private readonly SportsComplexDbContext dbContext;
 
