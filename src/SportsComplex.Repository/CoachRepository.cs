@@ -26,8 +26,10 @@ namespace SportsComplex.Repository
         public async Task<int> CreateCoachAsync(Coach coach)
         {
             dbContext.Coaches.Add(coach);
-            await dbContext.SaveChangesAsync();
-            return coach.Id;
+            if (await dbContext.SaveChangesAsync() == 1)
+                return coach.Id;
+
+            return -1;
         }
 
         public async Task<bool> UpdateCoachAsync(Coach coach)
@@ -45,6 +47,6 @@ namespace SportsComplex.Repository
 
             dbContext.Coaches.Remove(coach);
             return await dbContext.SaveChangesAsync() == 1;
-        }        
+        }
     }
 }
