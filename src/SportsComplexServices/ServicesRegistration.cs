@@ -15,6 +15,8 @@ namespace SportsComplex.Services
             serviceCollection.AddTransient<IDisciplineService, DisciplineService>();
             serviceCollection.AddTransient<ICoachService, CoachService>();
             serviceCollection.AddTransient<IClientService, ClientService>();
+
+            serviceCollection.AddAutoMapper(typeof(ServicesRegistration));
         }
     }
 }
