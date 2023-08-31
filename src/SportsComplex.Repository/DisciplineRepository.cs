@@ -1,4 +1,5 @@
-﻿using SportsComplex.Repository.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using SportsComplex.Repository.Interfaces;
 using SportsComplex.Repository.Interfaces.Models;
 
 namespace SportsComplex.Repository
@@ -12,38 +13,38 @@ namespace SportsComplex.Repository
             dbContext = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public IEnumerable<Discipline> GetDisciplines()
+        public async Task<IEnumerable<Discipline>> GetDisciplinesAsync()
         {
-            return dbContext.Disciplines.ToList();
+            return await dbContext.Disciplines.ToListAsync();
         }
 
-        public Discipline GetDiscipline(int id)
+        public async Task<Discipline> GetDisciplineAsync(int id)
         {
-            return dbContext.Disciplines.FirstOrDefault(x => x.Id == id);
+            return await dbContext.Disciplines.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public int CreateDiscipline(Discipline discipline)
+        public async Task<int> CreateDisciplineAsync(Discipline discipline)
         {
             dbContext.Disciplines.Add(discipline);
-            dbContext.SaveChanges();
+            await dbContext.SaveChangesAsync();
             return discipline.Id;
         }
 
-        public bool UpdateDiscipline(Discipline discipline)
+        public async Task<bool> UpdateDisciplineAsync(Discipline discipline)
         {
             dbContext.Update(discipline);
-            return dbContext.SaveChanges() == 1;
+            return await dbContext.SaveChangesAsync() == 1;
         }
 
-        public bool DeleteDiscipline(int id)
+        public async Task<bool> DeleteDisciplineAsync(int id)
         {
-            var disc = dbContext.Disciplines.FirstOrDefault(x => x.Id == id);
+            var disc = await dbContext.Disciplines.FirstOrDefaultAsync(x => x.Id == id);
 
             if (disc == null)
                 return false;
 
             dbContext.Disciplines.Remove(disc);
-            return dbContext.SaveChanges() == 1;
+            return await dbContext.SaveChangesAsync() == 1;
         }
     }
 }

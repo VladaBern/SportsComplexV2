@@ -1,4 +1,5 @@
-﻿using SportsComplex.Repository.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using SportsComplex.Repository.Interfaces;
 using SportsComplex.Repository.Interfaces.Models;
 
 namespace SportsComplex.Repository
@@ -12,38 +13,38 @@ namespace SportsComplex.Repository
             dbContext = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public IEnumerable<Coach> GetCoaches()
+        public async Task<IEnumerable<Coach>> GetCoachesAsync()
         {
-            return dbContext.Coaches.ToList();
+            return await dbContext.Coaches.ToListAsync();
         }
 
-        public Coach GetCoach(int id)
+        public async Task<Coach> GetCoachAsync(int id)
         {
-            return dbContext.Coaches.FirstOrDefault(x => x.Id == id);
+            return await dbContext.Coaches.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public int CreateCoach(Coach coach)
+        public async Task<int> CreateCoachAsync(Coach coach)
         {
             dbContext.Coaches.Add(coach);
-            dbContext.SaveChanges();
+            await dbContext.SaveChangesAsync();
             return coach.Id;
         }
 
-        public bool UpdateCoach(Coach coach)
+        public async Task<bool> UpdateCoachAsync(Coach coach)
         {
             dbContext.Update(coach);
-            return dbContext.SaveChanges() == 1;
+            return await dbContext.SaveChangesAsync() == 1;
         }
 
-        public bool DeleteCoach(int id)
+        public async Task<bool> DeleteCoachAsync(int id)
         {
-            var coach = dbContext.Coaches.FirstOrDefault(x => x.Id == id);
+            var coach = await dbContext.Coaches.FirstOrDefaultAsync(x => x.Id == id);
 
             if (coach == null)
                 return false;
 
             dbContext.Coaches.Remove(coach);
-            return dbContext.SaveChanges() == 1;
+            return await dbContext.SaveChangesAsync() == 1;
         }        
     }
 }

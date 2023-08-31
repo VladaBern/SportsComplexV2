@@ -4,10 +4,10 @@ namespace SportsComplex.Repository.Interfaces
 {
     public interface IDisciplineRepository
     {
-        IEnumerable<Discipline> GetDisciplines();
-        Discipline GetDiscipline(int id);
-        int CreateDiscipline(Discipline discipline);
-        bool UpdateDiscipline(Discipline discipline);
-        bool DeleteDiscipline(int id);
+        Task<IEnumerable<Discipline>> GetDisciplinesAsync();
+        Task<Discipline> GetDisciplineAsync(int id);
+        Task<int> CreateDisciplineAsync(Discipline discipline);
+        Task<bool> UpdateDisciplineAsync(Discipline discipline);
+        Task<bool> DeleteDisciplineAsync(int id);
     }
 }

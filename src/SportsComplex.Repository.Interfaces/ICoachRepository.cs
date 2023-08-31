@@ -4,10 +4,10 @@ namespace SportsComplex.Repository.Interfaces
 {
     public interface ICoachRepository
     {
-        IEnumerable<Coach> GetCoaches();
-        Coach GetCoach(int id);
-        int CreateCoach(Coach coach);
-        bool UpdateCoach(Coach coach);
-        bool DeleteCoach(int id);
+        Task<IEnumerable<Coach>> GetCoachesAsync();
+        Task<Coach> GetCoachAsync(int id);
+        Task<int> CreateCoachAsync(Coach coach);
+        Task<bool> UpdateCoachAsync(Coach coach);
+        Task<bool> DeleteCoachAsync(int id);
     }
 }

@@ -4,10 +4,10 @@ namespace SportsComplex.Repository.Interfaces
 {
     public interface IClientRepository
     {
-        IEnumerable<Client> GetClients();
-        Client GetClient(int id);
-        int CreateClient(Client client);
-        bool UpdateClient(Client client);
-        bool DeleteClient(int id);
+        Task<IEnumerable<Client>> GetClientsAsync();
+        Task<Client> GetClientAsync(int id);
+        Task<int> CreateClientAsync(Client client);
+        Task<bool> UpdateClientAsync(Client client);
+        Task<bool> DeleteClientAsync(int id);
     }
 }

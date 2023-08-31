@@ -1,4 +1,5 @@
-﻿using SportsComplex.Repository.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using SportsComplex.Repository.Interfaces;
 using SportsComplex.Repository.Interfaces.Models;
 
 namespace SportsComplex.Repository
@@ -12,38 +13,38 @@ namespace SportsComplex.Repository
             dbContext = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public IEnumerable<Client> GetClients()
+        public async Task<IEnumerable<Client>> GetClientsAsync()
         {
-            return dbContext.Clients.ToList();
+            return await dbContext.Clients.ToListAsync();
         }
 
-        public Client GetClient(int id)
+        public async Task<Client> GetClientAsync(int id)
         {
-            return dbContext.Clients.FirstOrDefault(x => x.Id == id);
+            return await dbContext.Clients.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public int CreateClient(Client client)
+        public async Task<int> CreateClientAsync(Client client)
         {
             dbContext.Clients.Add(client);
-            dbContext.SaveChanges();
+            await dbContext.SaveChangesAsync();
             return client.Id;
         }
 
-        public bool UpdateClient(Client client)
+        public async Task<bool> UpdateClientAsync(Client client)
         {
             dbContext.Update(client);
-            return dbContext.SaveChanges() == 1;
+            return await dbContext.SaveChangesAsync() == 1;
         }
 
-        public bool DeleteClient(int id)
+        public async Task<bool> DeleteClientAsync(int id)
         {
-            var client = dbContext.Clients.FirstOrDefault(x => x.Id == id);
+            var client = await dbContext.Clients.FirstOrDefaultAsync(x => x.Id == id);
 
             if (client == null)
                 return false;
 
             dbContext.Clients.Remove(client);
-            return dbContext.SaveChanges() == 1;
+            return await dbContext.SaveChangesAsync() == 1;
         }
     }
 }
