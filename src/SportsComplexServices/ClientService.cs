@@ -8,7 +8,7 @@ using SportsComplex.Services.Validators;
 
 namespace SportsComplex.Services
 {
-    internal class ClientService : IClientService
+    public class ClientService : IClientService
     {
         private readonly IClientRepository repository;
         private readonly IMapper mapper;
