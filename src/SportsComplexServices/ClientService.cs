@@ -40,7 +40,7 @@ namespace SportsComplex.Services
 
         public async Task<ClientDto> CreateClientAsync(ClientDto client)
         {
-            clientValidator.Validate(client);
+            await clientValidator.ValidateAsync(client);
             var clientId = await repository.CreateClientAsync(mapper.Map<ClientDto, Client>(client));
             if (clientId == -1)
                 throw new EntityNotCreatedException("Client not created");
@@ -53,7 +53,7 @@ namespace SportsComplex.Services
         public async Task<ClientDto> UpdateClientAsync(int id, ClientDto client)
         {
             idValidator.Validate(id);
-            clientValidator.Validate(client);
+            await clientValidator.ValidateAsync(client);
             client.Id = id;
             var updated = await repository.UpdateClientAsync(mapper.Map<ClientDto, Client>(client));
             if (!updated)

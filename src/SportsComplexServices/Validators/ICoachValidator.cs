@@ -4,6 +4,6 @@ namespace SportsComplex.Services.Validators
 {
     public interface ICoachValidator
     {
-        void Validate(CoachDto coach);
+        Task ValidateAsync(CoachDto coach);
     }
 }

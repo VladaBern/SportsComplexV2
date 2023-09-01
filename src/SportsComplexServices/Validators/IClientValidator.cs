@@ -4,6 +4,6 @@ namespace SportsComplex.Services.Validators
 {
     public interface IClientValidator
     {
-        void Validate(ClientDto client);
+        Task ValidateAsync(ClientDto client);
     }
 }

@@ -40,7 +40,7 @@ namespace SportsComplex.Services
 
         public async Task<CoachDto> CreateCoachAsync(CoachDto coach)
         {
-            coachValidator.Validate(coach);
+            await coachValidator.ValidateAsync(coach);
             var coachId = await repository.CreateCoachAsync(mapper.Map<CoachDto, Coach>(coach));
             if (coachId == -1)
                 throw new EntityNotCreatedException("Coach not created");
@@ -53,7 +53,7 @@ namespace SportsComplex.Services
         public async Task<CoachDto> UpdateCoachAsync(int id, CoachDto coach)
         {
             idValidator.Validate(id);
-            coachValidator.Validate(coach);
+            await coachValidator.ValidateAsync(coach);
             coach.Id = id;
             var updated = await repository.UpdateCoachAsync(mapper.Map<CoachDto, Coach>(coach));
             if (!updated)

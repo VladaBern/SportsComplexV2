@@ -10,8 +10,8 @@ namespace SportsComplex.Services
         {
             serviceCollection.AddSingleton<IIdValidator, IdValidator>();
             serviceCollection.AddSingleton<IDisciplineValidator, DisciplineValidator>();
-            serviceCollection.AddSingleton<ICoachValidator, CoachValidator>();
-            serviceCollection.AddSingleton<IClientValidator, ClientValidator>();
+            serviceCollection.AddTransient<ICoachValidator, CoachValidator>();
+            serviceCollection.AddTransient<IClientValidator, ClientValidator>();
             serviceCollection.AddTransient<IDisciplineService, DisciplineService>();
             serviceCollection.AddTransient<ICoachService, CoachService>();
             serviceCollection.AddTransient<IClientService, ClientService>();

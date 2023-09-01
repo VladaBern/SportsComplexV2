@@ -1,11 +1,19 @@
-﻿using SportsComplex.Services.Interfaces.DTO;
+﻿using SportsComplex.Repository.Interfaces;
+using SportsComplex.Services.Interfaces.DTO;
 using SportsComplex.Services.Validators.Exceptions;
 
 namespace SportsComplex.Services.Validators
 {
     public class CoachValidator : ICoachValidator
     {
-        public void Validate(CoachDto coach)
+        private readonly IDisciplineRepository discRepository;
+
+        public CoachValidator(IDisciplineRepository discRepository)
+        {
+            this.discRepository = discRepository ?? throw new ArgumentNullException(nameof(discRepository));
+        }
+
+        public async Task ValidateAsync(CoachDto coach)
         {
             if (coach == null)
                 throw new ValidationException("Coach shouldn't be null");
@@ -35,6 +43,9 @@ namespace SportsComplex.Services.Validators
                 throw new ValidationException("Identity number must has 11 symbols");
             if (coach.DisciplineId < 1)
                 throw new ValidationException("Discipline id must be greater than zero");
+            var disc = await discRepository.GetDisciplineAsync(coach.DisciplineId);
+            if (disc == null)
+                throw new ValidationException("Discipline id doesn't exist");
         }
     }
 }
