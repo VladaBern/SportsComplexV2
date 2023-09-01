@@ -6,4 +6,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SportsComplex.Repository\SportsComplex.Repository.csproj" />
+    <ProjectReference Include="..\SportsComplexServices\SportsComplex.Services.csproj" />
+  </ItemGroup>
+
 </Project>
