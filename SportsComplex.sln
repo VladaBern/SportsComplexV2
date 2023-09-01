@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsComplex.Services.Inte
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsComplex.Services", "src\SportsComplexServices\SportsComplex.Services.csproj", "{ACADB912-5A84-4432-A7D8-254DA7CFD029}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsComplex.Services.Tests", "test\SportsComplex.Services.Tests\SportsComplex.Services.Tests.csproj", "{0E833B51-6AA9-49D2-974B-D4CE812366B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{ACADB912-5A84-4432-A7D8-254DA7CFD029}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACADB912-5A84-4432-A7D8-254DA7CFD029}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACADB912-5A84-4432-A7D8-254DA7CFD029}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E833B51-6AA9-49D2-974B-D4CE812366B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E833B51-6AA9-49D2-974B-D4CE812366B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E833B51-6AA9-49D2-974B-D4CE812366B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E833B51-6AA9-49D2-974B-D4CE812366B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
