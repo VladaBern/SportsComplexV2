@@ -34,7 +34,16 @@ namespace SportsComplex.Repository
 
         public async Task<bool> UpdateClientAsync(Client client)
         {
-            dbContext.Update(client);
+            var clientDb = await dbContext.Clients.FirstOrDefaultAsync(x => x.Id == client.Id);
+            if (clientDb == null)
+                return false;
+            clientDb.Name = client.Name;
+            clientDb.Surname = client.Surname;
+            clientDb.DateOfBirth = client.DateOfBirth;
+            clientDb.Phone = client.Phone;
+            clientDb.IdentityNumber = client.IdentityNumber;
+            clientDb.CoachId = client.CoachId;
+            dbContext.Clients.Update(clientDb);
             return await dbContext.SaveChangesAsync() == 1;
         }
 

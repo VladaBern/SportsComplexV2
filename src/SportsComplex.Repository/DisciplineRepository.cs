@@ -34,7 +34,11 @@ namespace SportsComplex.Repository
 
         public async Task<bool> UpdateDisciplineAsync(Discipline discipline)
         {
-            dbContext.Update(discipline);
+            var disc = await dbContext.Disciplines.FirstOrDefaultAsync(x => x.Id == discipline.Id);
+            if (disc == null)
+                return false;
+            disc.Name = discipline.Name;
+            dbContext.Disciplines.Update(disc);
             return await dbContext.SaveChangesAsync() == 1;
         }
 
